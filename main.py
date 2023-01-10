@@ -7,6 +7,7 @@ def main():
     try:
         url = 'https://www.taifex.com.tw/cht/9/futuresQADetail' # 加權股價指數成分股暨市值比重
         resp = requests.get(url)
+        resp.encoding = 'utf-8' # 使用与网页相对应的编码格式, 避免乱码
         soup = BeautifulSoup(resp.text, 'html.parser') # 通过html dom解析器采集数据
         items = soup.find_all('tr')
 

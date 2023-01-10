@@ -8,10 +8,15 @@
 * 存储数据为csv文件
 
 ## Requires
-Python 3.11.0
-beautifulsoup4 4.11.1
-requests 2.28.1
-pandas 1.5.2
+Python 3.11.0  
+beautifulsoup4 4.11.1  
+requests 2.28.1  
+pandas 1.5.2  
+
+## Usage
+```
+python main.py
+```
 
 ## Change Log
 v1.0.0
