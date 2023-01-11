@@ -9,14 +9,14 @@ def main():
         resp = requests.get(url)
         resp.encoding = 'utf-8' # 使用与网页相对应的编码格式, 避免乱码
         soup = BeautifulSoup(resp.text, 'html.parser') # 通过html dom解析器采集数据
-        items = soup.find_all('tr')
+        items = soup.select('.table_c tr')
 
         odd_data = [] 
         even_data = []
         data = [] 
         for index in range(len(items)): # 通过索引遍历
             if index == 0: continue # 第1行为栏目略过
-            tds         = items[index].find_all('td')
+            tds         = items[index].select('td')
             sort        = tds[0].get_text(strip=True) # 排行, strip干掉字符串首尾空白
             stock_id    = tds[1].get_text(strip=True) # 證券代号
             stock_name  = tds[2].get_text(strip=True) # 證券名稱
